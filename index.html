@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body class="demo">
+    <img
+      src="loader-cover2.png"
+      style="
+        position: absolute;
+        left: -30px;
+        top: -30px;
+        transform: scale(0.5);
+        cursor: pointer;
+      "
+    />
+    <img
+      id="load"
+      onclick="window.open('file:///E:python3/pygame1.py');"
+      class="an img"
+      src="loader.png"
+      style="
+        position: absolute;
+        left: -30px;
+        top: -30px;
+        transform: rotate(0deg) scale(0.5);
+        z-index: 1;
+        cursor: pointer;
+      "
+    />
+    <!-- <button onclick="left2()" style="z-index: 5;">click me</button> -->
+    <script>
+      var sleep = function (time) {
+        var startTime = new Date().getTime() + parseInt(time, 10);
+        while (new Date().getTime() < startTime) {}
+      };
+      img1 = document.getElementById("load");
+      var angle = 0;
+      var t = 0;
+      hide = function () {
+        img1.style.display("none");
+      };
+      left = function () {
+        angle = (angle + 1) % 360;
+        // var scale_plus = Math.round(Math.random()) / 10 + 1;
+        scale_plus = yq4p8xmxf1(t);
+        img1.style.transform =
+          "rotate(" + angle + "deg) " + "scale(" + scale_plus / 2 + ")";
+        t = (t + 0.001) % 1;
+      };
+      yq4p8xmxf1 = function (x) {
+        return -0.8 * x * x + 0.8 * x + 1;
+        // y = -0.8*x*x +0.8*x +1
+      };
+      self.setInterval("left()", 5);
+    </script>
+  </body>
+</html>
