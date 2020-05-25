@@ -16,7 +16,7 @@
         />
           <img
                 id="load"
-                onclick="changeTo(1);"
+                onclick="changeToPage1();"
                 class="pic_portal"
                 src="loader.png"
                 class="pic_portal"
@@ -36,6 +36,7 @@
         img2 = document.getElementById("bg_img");
         img3 = document.getElementById("rick_img");
         sound1_m3 = document.getElementById("door_1")
+        sound2_m3 = document.getElementById("door_2")
         img1.style.display = "none";
         img2.style.display = "none";
         window.onload = function(){
@@ -44,6 +45,16 @@
             sound1_m3.loop = false;
             sound1_m3.play();
             self.setInterval("left()", 5);
+        }
+    </script>
+    <script>
+        function changeToPage1(){
+            sound2_m3.loop = false;
+            sound2_m3.play();
+            
+            sound2_m3.addEventListener('ended', function () {  
+                changeTo(1);
+        }, false);
         }
     </script>
     </body>
