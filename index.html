@@ -1,73 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <body style="text-align: center;">
-    <img
-      id="bg_img"
-      src="loader-cover2.png"
-      style="
-        position: absolute;
-        left: 35%;
-        top: 35%;
-        transform: scale(1.1);
-        cursor: pointer;
-      "
-    />
-    <img
-      id="load"
-      onclick="hide();"
-      class="an img"
-      src="loader.png"
-      style="
-        position: absolute;
-        left: 35%;
-        top: 35%;
-        transform: rotate(0deg) scale(1);
-        z-index: 1;
-        cursor: pointer;
-      "
-    />
-    <img
-      id="rick_img"
-      src="rick2.png"
-      width="300px"
-      height="518px"
-      style="display: none;"
-    />
-    <!-- <button onclick="left2()" style="z-index: 5;">click me</button> -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    <body>
+        <canvas id="target"></canvas>
+        <script src='js/easeljs.js'></script>
+        <script src="js/script.js"></script>
+
+        <div protal>
+            <img
+                id="bg_img"
+                src="loader-cover2.png"
+                class="pic_portal"
+        />
+          <img
+                id="load"
+                onclick="changeTo(1);"
+                class="pic_portal"
+                src="loader.png"
+                class="pic_portal"
+        />
+        </div>
+
+        <audio id="door_1" src="sounds/1.mp3" ></audio>
+        <audio id="door_2" src="sounds/2.mp3" ></audio>
+        <audio id="door_3" src="sounds/3.mp3" ></audio>
+        <audio id="door_4" src="sounds/4.mp3" ></audio>
+
+    <script src="js/common.js"></script>
+    <script src="js/portal.js"></script>
+
     <script>
-      var sleep = function (time) {
-        var startTime = new Date().getTime() + parseInt(time, 10);
-        while (new Date().getTime() < startTime) {}
-      };
-      img1 = document.getElementById("load");
-      img2 = document.getElementById("bg_img");
-      img3 = document.getElementById("rick_img");
-      // var visiable_size = [
-      //   document.body.clientWidth,
-      //   document.body.clientHeight,
-      // ];
-      // img1.style.left = String(visiable_size[0] / 2) + "px";
-      // img1.style.top = String(visiable_size[1] / 2) + "px";
-      var angle = 0;
-      var t = 0;
-      function hide() {
+        img1 = document.getElementById("load");
+        img2 = document.getElementById("bg_img");
+        img3 = document.getElementById("rick_img");
+        sound1_m3 = document.getElementById("door_1")
         img1.style.display = "none";
         img2.style.display = "none";
-        img3.style.display = "";
-      }
-      left = function () {
-        angle = (angle + 1) % 360;
-        // var scale_plus = Math.round(Math.random()) / 10 + 1;
-        scale_plus = yq4p8xmxf1(t);
-        img1.style.transform =
-          "rotate(" + angle + "deg) " + "scale(" + scale_plus + ")";
-        t = (t + 0.001) % 1;
-      };
-      yq4p8xmxf1 = function (x) {
-        return -0.8 * x * x + 0.8 * x + 1;
-        // y = -0.8*x*x +0.8*x +1
-      };
-      self.setInterval("left()", 5);
+        window.onload = function(){
+            img1.style.display = "inline";
+            img2.style.display = "inline";
+            sound1_m3.loop = false;
+            sound1_m3.play();
+            self.setInterval("left()", 5);
+        }
     </script>
-  </body>
+    </body>
 </html>
