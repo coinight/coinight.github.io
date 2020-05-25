@@ -51,10 +51,9 @@
         function changeToPage1(){
             sound2_m3.loop = false;
             sound2_m3.play();
-            
             sound2_m3.addEventListener('ended', function () {  
                 changeTo(1);
-        }, false);
+        }, true);
         }
     </script>
     </body>
