@@ -3,7 +3,7 @@ var c = createjs, stage = new c.StageGL("target"), t=0, count=0, w, h, max, min;
 var dotR = 8, amp0Amt=1, amp1Amt=0.2, maxDots=2000, speed=2.5;
 c.Ticker.timingMode = c.Ticker.RAF;
 c.Ticker.on("tick", tick);
-stage.setClearColor("#201624");
+stage.setClearColor("#eae5f3");
 
 var dotTemplate, dots=[];
 
@@ -42,7 +42,7 @@ function tick(evt) {
 function getDot() {
 	if (!dotTemplate) {
 		var dotShape = new c.Shape(), blurShape = new c.Shape(), g=dotShape.graphics;
-		g.f("#fff").dc(0,0,dotR);
+		g.f("#17fd00").dc(0,0,dotR);
 		var pow = Math.ceil(Math.log(dotR)/Math.log(2)), base2R = Math.pow(2,pow);
 		dotShape.cache(-base2R,-base2R,base2R*2,base2R*2);
 		dotTemplate = new c.Bitmap(dotShape.cacheCanvas);

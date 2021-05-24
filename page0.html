@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-  <body style="text-align: center;">
-    <div style="text-align: center;height: 10px;width: 10px;" >
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>陆千辰的小屋</title>
+    <meta charset="utf-8" />
+</head>
+<body style="text-align: center;">
+    <div id="portol" style="text-align: center;height: 50%;width: 50%;">
       <img
-      id="bg_img"
-      src="loader-cover2.png"
+      id="portol_back"
+      src="Resources/loader-cover2.png"
       style="
         position: absolute;
         left: 41%;
@@ -12,74 +17,28 @@
         transform: scale(1.1);
         cursor: pointer;
       "
-    />
-    <!-- position: absolute; -->
-    <img
-      id="load"
-      onclick="changeTo(1);"
-      class="an img"
-      src="loader.png"
-      
-      style="
-        position: absolute;
-        left: 41%;
-        top: 35%;
-        transform: rotate(0deg) scale(1);
-        z-index: 1;
-        cursor: pointer;
-      "
-    />
-    <img
-      id="rick_img"
-      src="rick2.png"
-      width="300px"
-      height="518px"
-      style="display: none;"
-    />
+      />
+      <!-- position: absolute; -->
+      <img
+        id="portol_load"
+
+        class="an img"
+        src="Resources/loader.png"
+        style="
+          position: absolute;
+          left: 41%;
+          top: 35%;
+          transform: rotate(0deg) scale(1);
+          z-index: 1;
+          cursor: pointer;
+        "
+      />
     </div>
     <canvas id="target"></canvas>
-
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
     <script src='js/easeljs.js'></script>
+    <script src="js/jQueryRotate.js"></script>
     <script src="js/script.js"></script>
-    
-    <!-- <button onclick="left2()" style="z-index: 5;">click me</button> -->
-    <script>
-      var sleep = function (time) {
-        var startTime = new Date().getTime() + parseInt(time, 10);
-        while (new Date().getTime() < startTime) {}
-      };
-      img1 = document.getElementById("load");
-      img2 = document.getElementById("bg_img");
-      img3 = document.getElementById("rick_img");
-      // var visiable_size = [
-      //   document.body.clientWidth,
-      //   document.body.clientHeight,
-      // ];
-      // img1.style.left = String(visiable_size[0] / 2) + "px";
-      // img1.style.top = String(visiable_size[1] / 2) + "px";
-      var angle = 0;
-      var t = 0;
-      function changeTo(page){
-        window.location="page"+page+".html";
-      }
-      function hide() {
-        img1.style.display = "none";
-        img2.style.display = "none";
-        img3.style.display = "";
-      }
-      left = function () {
-        angle = (angle + 1) % 360;
-        // var scale_plus = Math.round(Math.random()) / 10 + 1;
-        scale_plus = yq4p8xmxf1(t);
-        img1.style.transform =
-          "rotate(" + angle + "deg) " + "scale(" + scale_plus + ")";
-        t = (t + 0.001) % 1;
-      };
-      yq4p8xmxf1 = function (x) {
-        return -0.8 * x * x + 0.8 * x + 1;
-        // y = -0.8*x*x +0.8*x +1
-      };
-      //self.setInterval("left()", 5);
-    </script>
+    <script src="js/JsOPage0.js"></script>
   </body>
 </html>
